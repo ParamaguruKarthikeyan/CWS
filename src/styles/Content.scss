@@ -1,0 +1,61 @@
+// body {
+//   background-image: url("../../public/img/CSW-BACKGROUND-IMAGE-LARGE.png");
+//   background-size: cover;
+// }
+
+.container-fluid {
+  margin: 10px;
+  h5 {
+    &.content-header {
+      i {
+        top: 3px;
+        position: relative;
+        margin-right: 5px;
+      }
+    }
+  }
+  &.login-screen {
+    background-image: url("../../public/img/CSW-BACKGROUND-IMAGE-LARGE.png");
+    background-size: cover;
+    background-color: #001323;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: auto;
+  }
+  .home-screen {
+    .user-card {
+      position: relative;
+      left: 50%;
+      top: 20px;
+      transform: translateX(-50%);
+      min-height: min(500px, 100vh);
+      border-radius: 10px;
+      text-align: center;
+      padding: 15px;
+      img {
+        &.profile-picture {
+          height: 150px;
+          width: 150px;
+          border-radius: 50%;
+          padding: 2px;
+        }
+      }
+    }
+  }
+  .table-screen {
+    .MuiDataGrid-toolbarContainer {
+      float: right;
+    }
+    .table-container {
+      height: calc(100vh - 120px);
+      padding: 0;
+    }
+  }
+  .json-screen {
+    .json-container {
+      padding: 10px;
+    }
+  }
+}
