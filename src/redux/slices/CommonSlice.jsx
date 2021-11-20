@@ -1,12 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 export const CommonSlice = createSlice({
-  name: "common",
+  name: 'common',
   initialState: {
     loading: true,
     inactiveFor: 0,
-    title: "",
-    returnTo: "",
+    title: '',
+    returnTo: '',
     googleResponse: undefined,
   },
   reducers: {

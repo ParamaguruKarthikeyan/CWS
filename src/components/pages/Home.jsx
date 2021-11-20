@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { CommonSlice } from "../../redux/slices";
+import { CommonSlice } from '../../redux/slices';
 
 export default function Home() {
   const dispatch = useDispatch();
   const googleResponse = useSelector((state) => state.common.googleResponse);
   useEffect(() => {
-    dispatch(CommonSlice.setTitle("Home"));
+    dispatch(CommonSlice.setTitle('Home'));
   }, []);
   return (
     <div className="home-screen row">

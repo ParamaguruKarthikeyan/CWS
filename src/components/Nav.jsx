@@ -1,13 +1,13 @@
-import "../styles/Nav.scss";
+import '../styles/Nav.scss';
 
-import { NavLink, BrowserRouter as Router } from "react-router-dom";
-import React, { useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { NavLink, BrowserRouter as Router } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { CommonSlice } from "../redux/slices";
-import M from "../vendor/materialize/js/bin/materialize.min.js";
-import { SessinonNoticeModal } from "./Utils";
-import { useGoogleLogout } from "react-google-login";
+import { CommonSlice } from '../redux/slices';
+import M from '../vendor/materialize/js/bin/materialize.min.js';
+import { SessinonNoticeModal } from './Utils';
+import { useGoogleLogout } from 'react-google-login';
 
 export default function Nav() {
   const clientId = window.SERVER_CONFIG.GOOGLE_CLIENT_ID;
@@ -21,7 +21,7 @@ export default function Nav() {
   const { signOut, loaded } = useGoogleLogout({
     clientId,
     onFailure: () => {
-      M.toast({ html: "Error occured during Logout!", classes: "rounded" });
+      M.toast({ html: 'Error occured during Logout!', classes: 'rounded' });
     },
     onLogoutSuccess: () => {
       dispatch(CommonSlice.resetToInit());
@@ -33,7 +33,7 @@ export default function Nav() {
       window.SERVER_CONFIG.SESSION_EXPIRY_IN
     ) {
       signOut();
-      document.querySelector(".modal-overlay").remove();
+      document.querySelector('.modal-overlay').remove();
       dispatch(CommonSlice.reSetInactiveFor());
     } else {
       dispatch(CommonSlice.setInactiveFor());
@@ -41,10 +41,10 @@ export default function Nav() {
   };
 
   useEffect(() => {
-    M.Dropdown.init(document.querySelectorAll(".dropdown-trigger"), {
+    M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'), {
       coverTrigger: false,
     });
-    M.Sidenav.init(document.querySelectorAll(".sidenav"));
+    M.Sidenav.init(document.querySelectorAll('.sidenav'));
     let interval = setInterval(handleSessionAndExpiry, 1000);
     return () => clearInterval(interval);
   }, []);

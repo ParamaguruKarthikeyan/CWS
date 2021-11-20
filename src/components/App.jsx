@@ -1,15 +1,15 @@
-import "../styles/App.scss";
+import '../styles/App.scss';
 
-import { ContentLoading, ErrorBoundary } from "./Utils";
-import { useDispatch, useSelector } from "react-redux";
+import { ContentLoading, ErrorBoundary } from './Utils';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { CommonSlice } from "../redux/slices";
-import Contents from "./Contents";
-import Nav from "./Nav";
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { WindowTitle } from "./Utils";
-import { useGoogleLogin } from "react-google-login";
+import { CommonSlice } from '../redux/slices';
+import Contents from './Contents';
+import Nav from './Nav';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { WindowTitle } from './Utils';
+import { useGoogleLogin } from 'react-google-login';
 
 export default function App() {
   const clientId = window.SERVER_CONFIG.GOOGLE_CLIENT_ID;
@@ -23,13 +23,13 @@ export default function App() {
           CommonSlice.setGoogleResponse({
             success: success,
             ...response,
-          })
+          }),
         );
       } else {
         dispatch(
           CommonSlice.setGoogleResponse({
             success: false,
-          })
+          }),
         );
       }
     };

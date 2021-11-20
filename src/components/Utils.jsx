@@ -1,16 +1,16 @@
-import React, { useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { CommonSlice } from "../redux/slices";
-import { Helmet } from "react-helmet";
-import M from "../vendor/materialize/js/bin/materialize.min.js";
+import { CommonSlice } from '../redux/slices';
+import { Helmet } from 'react-helmet';
+import M from '../vendor/materialize/js/bin/materialize.min.js';
 
 export const WindowTitle = function () {
   const title = useSelector((state) => state.common.title);
   return (
     <Helmet>
       <meta charSet="utf-8" />
-      <title>{`CSW Assignment${title && " : " + title}`}</title>
+      <title>{`CSW Assignment${title && ' : ' + title}`}</title>
     </Helmet>
   );
 };
@@ -21,10 +21,10 @@ export const SessinonNoticeModal = function () {
   const modalRef = useRef();
   useEffect(() => {
     modalRef.current = M.Modal.init(
-      document.querySelectorAll("#sessionNotice"),
+      document.querySelectorAll('#sessionNotice'),
       {
         dismissible: false,
-      }
+      },
     )[0];
     modalRef.current.open();
     return () => {
@@ -35,7 +35,7 @@ export const SessinonNoticeModal = function () {
     <div id="sessionNotice" className="modal">
       <div className="modal-content">
         <p>
-          User Session is about to expire in{" "}
+          User Session is about to expire in{' '}
           {window.SERVER_CONFIG.SESSION_EXPIRY_IN - inactiveFor} seconds. Do you
           want to continue?
         </p>
@@ -91,7 +91,7 @@ class ErrorHandler extends React.Component {
         <div className="error-boundary">
           <span>
             <i className="material-icons">error</i>
-            {this.props.message || "Something went wrong."}
+            {this.props.message || 'Something went wrong.'}
           </span>
         </div>
       );

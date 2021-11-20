@@ -1,1 +1,1 @@
-export * as CommonSlice from "./CommonSlice";
+export * as CommonSlice from './CommonSlice';

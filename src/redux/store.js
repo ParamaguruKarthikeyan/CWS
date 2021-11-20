@@ -1,5 +1,5 @@
-import CommonSlice from "./slices/CommonSlice";
-import { configureStore } from "@reduxjs/toolkit";
+import CommonSlice from './slices/CommonSlice';
+import { configureStore } from '@reduxjs/toolkit';
 
 export default configureStore({
   reducer: {
