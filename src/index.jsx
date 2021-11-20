@@ -1,5 +1,3 @@
-import './vendor/materialize/sass/materialize.scss';
-
 import App from './components/App';
 import { Provider } from 'react-redux';
 import React from 'react';

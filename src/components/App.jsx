@@ -1,3 +1,4 @@
+import '../vendor/materialize/sass/materialize.scss';
 import '../styles/App.scss';
 
 import { ContentLoading, ErrorBoundary } from './Utils';
