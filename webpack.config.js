@@ -3,25 +3,11 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: ['@babel/polyfill', './src/index.jsx'],
   mode: 'production',
   // devtool: false,
   module: {
     rules: [
-      {
-        test: /\.worker\.(c|m)?js$/i,
-        use: [
-          {
-            loader: 'worker-loader',
-          },
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env'],
-            },
-          },
-        ],
-      },
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
